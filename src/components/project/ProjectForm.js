@@ -16,7 +16,7 @@ function ProjectForm({ handleSubmit, btnText, projectData, }) {
   fetch('http://localhost:5000/categories', {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json' // determinando o tipod a comunicação(recebendo json) (uma promisses)
+      'Content-Type': 'application/json' // determinando o tipo da comunicação(recebendo json) (uma promisses)
     }
   })
     .then(resp => resp.json()) // o que eu receber de dado vira json
