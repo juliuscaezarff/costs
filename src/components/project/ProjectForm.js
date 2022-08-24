@@ -7,7 +7,7 @@ import Input from '../form/Input'
 import Select from '../form/Select'
 import SubmitButton from '../form/SubmitButton'
 
-function ProjectForm({ handleSubmit, btnText, projectData }) {
+function ProjectForm({ handleSubmit, btnText, projectData, }) {
   const [categories, setCategories] = useState([]) // eles começam como um array vazio(esperando a resposta da api)
   const [ project, setProject ] = useState(projectData || {})
 //se não usar esse hook ele vai consultar a api milhões de vezes
@@ -39,7 +39,7 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
   function handleCategory(e) { // reaproveitar em outros forulários
     setProject({...project, category: {
       id: e.target.value,
-      name: e.target.options[e.target.selectIndex].text,
+      name: e.target.options[e.target.selectedIndex].text
      },
     })
   }
