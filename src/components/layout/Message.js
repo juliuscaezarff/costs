@@ -1,6 +1,8 @@
-function Message() {
+import styles from './Message.module.css'
 
-  return
+function Message({ type, msg }) {
+
+  return 
 }
 
 export default Message
