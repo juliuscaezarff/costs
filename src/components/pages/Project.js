@@ -1,8 +1,7 @@
 function Project() {
 
-  return (
-    <p>Projeto</p>
-  )
+  return <h1>Projeto</h1>
+
 }
 
 export default Project
