@@ -20,11 +20,12 @@ function Projects() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/projects', {
+    setTimeout(() => {
+        fetch('http://localhost:5000/projects', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
     })
       .then(resp => resp.json())
       .then(data => {
@@ -33,6 +34,7 @@ function Projects() {
         setRemoveLoading(true)
       })
       .catch(err => console.log(err))
+      }, 1000)
   }, [])
 
   return (
