@@ -61,6 +61,8 @@ function Project() {
       .catch(err => console.log(err))
   }
 
+  function createService() {}
+
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
   }
@@ -108,9 +110,11 @@ function Project() {
                 {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
               </button>
               <div className={styles.projectInfo}>
-                {showServiceForm && (
-                  <ServiceForm />
-                )}
+                {showServiceForm && <ServiceForm 
+                  handleSubmit={createService}
+                  btnText="Adicionar Serviço"
+                  projectData={project}
+                />}
               </div>
             </div>
             <h2>Serviços</h2>
