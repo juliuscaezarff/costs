@@ -15,6 +15,7 @@ function Project() {
   const { id } = useParams()
 
   const [project, setProject] = useState([])
+  const [services, setServices] = useState([])
   const [showProjectForm, setShowProjectForm] = useState(false)
   const [showServiceForm, setShowServiceForm] = useState(false)
   const [message, setMessage] = useState()
@@ -31,6 +32,7 @@ function Project() {
         .then(resp => resp.json())
         .then(data => {
           setProject(data)
+          setServices(data.services)
         })
         .catch(err => console.log(err))
     }, 300)
@@ -69,14 +71,14 @@ function Project() {
     //last service
     const lastService = project.services[project.services.length - 1]
 
-    lastService.id = uuidv4() 
+    lastService.id = uuidv4()
 
     const lastServiceCost = lastService.cost
 
     const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
 
     // maximum value validation
-    if(newCost > parseFloat(project.budget)) {
+    if (newCost > parseFloat(project.budget)) {
       setMessage('Orçamento ultrapassado, verfique o valor do serviço')
       setType('error')
       project.services.pop()
@@ -90,15 +92,19 @@ function Project() {
     fetch(`http://localhost:5000/projects/${project.id}`, {
       method: 'PATCH', //PATCH, porq n vou atualizar o projeto todo, só dados parciais do projeto
       headers: {
-        'Content-Type' : 'application/json'
-      }, body: JSON.stringify(project)
-    }).then((resp) => resp.json())
-    .then((data) => {
-      // exibir o serviço
-      console.log(data)
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(project)
     })
-    .catch(err => console.log(err))
+      .then(resp => resp.json())
+      .then(data => {
+        // exibir o serviço
+        console.log(data)
+      })
+      .catch(err => console.log(err))
   }
+
+  function removeService() {}
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm)
@@ -147,16 +153,29 @@ function Project() {
                 {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
               </button>
               <div className={styles.projectInfo}>
-                {showServiceForm && <ServiceForm 
-                  handleSubmit={createService}
-                  btnText="Adicionar Serviço"
-                  projectData={project}
-                />}
+                {showServiceForm && (
+                  <ServiceForm
+                    handleSubmit={createService}
+                    btnText="Adicionar Serviço"
+                    projectData={project}
+                  />
+                )}
               </div>
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-                <p>Item de Serviços</p>
+              {services.length > 0 &&
+                services.map(service => (
+                  <ServiceCard
+                    id={service.id}
+                    name={service.name}
+                    cost={service.cost}
+                    description={service.description}
+                    key={service.id}
+                    handleRemove={removeService}
+                  />
+                ))}
+              {services.length === 0 && <p>Não há serviços cadastrafos</p>}
             </Container>
           </Container>
         </div>
