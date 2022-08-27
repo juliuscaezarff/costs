@@ -2,13 +2,26 @@
   "projects": [
     {
       "name": " Projeto Atualizado",
-      "budget": "500",
+      "budget": "2000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 900,
+      "services": [
+        {
+          "name": "Contratar um design",
+          "cost": "800",
+          "description": "Vai fazer o layout do projeto",
+          "id": "740b8e16-9249-445e-961c-1a0c2df93d9a"
+        },
+        {
+          "name": "teste",
+          "cost": "100",
+          "description": "teste",
+          "id": "038b232e-978c-43bc-8bd3-dc5cc1c1815f"
+        }
+      ],
       "id": 5
     },
     {
@@ -39,6 +52,24 @@
       "cost": 0,
       "services": [],
       "id": 7
+    },
+    {
+      "name": "Projeto felipe",
+      "budget": "7000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 800,
+      "services": [
+        {
+          "name": "Contratar um design",
+          "cost": "800",
+          "description": "Vai fazer o layout da empresa",
+          "id": "ad576265-7c58-4962-b9de-9879b92b4dff"
+        }
+      ],
+      "id": 8
     }
   ],
   "categories": [

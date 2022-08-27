@@ -8,6 +8,7 @@ import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjectForm from '../project/ProjectForm'
 import ServiceForm from '../service/ServiceForm'
+import ServiceCard from '../service/ServiceCard'
 
 import styles from './Project.module.css'
 
@@ -98,8 +99,7 @@ function Project() {
     })
       .then(resp => resp.json())
       .then(data => {
-        // exibir o serviço
-        console.log(data)
+        setShowServiceForm(false)
       })
       .catch(err => console.log(err))
   }
