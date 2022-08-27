@@ -107,7 +107,9 @@ function Project() {
                 {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
               </button>
               <div className={styles.projectInfo}>
-                {showServiceForm && (<div>formulário do serviço</div>)}
+                {showServiceForm && (
+                  <ServiceForm />
+                )}
               </div>
             </div>
             <h2>Serviços</h2>

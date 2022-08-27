@@ -21,6 +21,17 @@
       "cost": 0,
       "services": [],
       "id": 6
+    },
+    {
+      "name": "Projeto Sofia",
+      "budget": "6000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 7
     }
   ],
   "categories": [
