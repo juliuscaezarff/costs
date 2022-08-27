@@ -18,8 +18,15 @@
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 100,
+      "services": [
+        {
+          "name": "Serviço test",
+          "cost": "100",
+          "description": "Vamo",
+          "id": "9bf6e02b-2a3f-423e-83c1-3001c515db74"
+        }
+      ],
       "id": 6
     },
     {

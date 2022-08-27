@@ -63,7 +63,8 @@ function Project() {
       .catch(err => console.log(err))
   }
 
-  function createService() {
+  function createService(project) {
+    setMessage('')
 
     //last service
     const lastService = project.services[project.services.length - 1]
@@ -85,7 +86,18 @@ function Project() {
     // add service cost to project total cost
     project.cost = newCost
 
-    
+    //upade project
+    fetch(`http://localhost:5000/projects/${project.id}`, {
+      method: 'PATCH', //PATCH, porq n vou atualizar o projeto todo, só dados parciais do projeto
+      headers: {
+        'Content-Type' : 'application/json'
+      }, body: JSON.stringify(project)
+    }).then((resp) => resp.json())
+    .then((data) => {
+      // exibir o serviço
+      console.log(data)
+    })
+    .catch(err => console.log(err))
   }
 
   function toggleProjectForm() {
