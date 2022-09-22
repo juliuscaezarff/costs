@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2em;
+  background: url(../../img/projeto-blog.jpg);
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  height: 30vh;
+}
+
+.introContainer span {
+  color: #ffbb33;
+  padding: 0 .2em;
+  background-color: #222;
+}
