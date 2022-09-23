@@ -1,6 +1,7 @@
 import styles from './Company.module.css'
 
 import LinkButton from '../layout/LinkButton'
+import DiferentialsBox from '../layout/DiferentialsBox'
 
 
 function Company() {
@@ -13,9 +14,14 @@ function Company() {
         <LinkButton to="/newproject" text="Criar Projeto"/>
       </div>
 
-      <div>
-        aa
-      </div>
+      <section className={styles.diferentialsContainer}>
+        <h1>Conquistas da <span>costs</span></h1>
+        <div className={styles.box}>
+        <DiferentialsBox text='+2.100' description='Empresas parceiras'/>
+        <DiferentialsBox text='+11.000' description='Projetos criados'/>
+        <DiferentialsBox text='+5' description='Anos no mercado'/>
+        </div>
+      </section>
     </div>
   )
 }
