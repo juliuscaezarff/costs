@@ -6,6 +6,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   height: 10em;
+  width: 20em;
+}
+
+.box p {
+  margin-bottom: 1em;
 }
