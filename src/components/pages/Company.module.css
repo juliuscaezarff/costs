@@ -44,5 +44,11 @@
   display: flex;
   gap: 1em;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
+.descriptionTeam img {
+  width: 28em;
+  height: 24em;
+  border-radius: 2em;
+}
