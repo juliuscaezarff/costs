@@ -52,3 +52,7 @@
   height: 24em;
   border-radius: 2em;
 }
+
+.descriptionTeam h3 {
+  width: 25rem;
+}
