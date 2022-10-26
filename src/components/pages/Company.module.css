@@ -40,12 +40,9 @@
   text-align: center;
 }
 
-.description img {
-  width: 50em;
-  height: 50em; 
+.descriptionTeam {
+  display: flex;
+  gap: 1em;
+  align-items: center;
 }
 
-.description h3 {
-  font-weigth: 600;
-  margin-bottom: 5em;
-}
