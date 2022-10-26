@@ -3,7 +3,7 @@ import styles from './Company.module.css'
 import LinkButton from '../layout/LinkButton'
 import DiferentialsBox from '../layout/DiferentialsBox'
 
-import DesignBoard from '../../img/design-board.png'
+//import DesignBoard from '../../img/design-board.png'
 
 function Company() {
   return (
@@ -28,12 +28,17 @@ function Company() {
       </section>
 
       <section className={styles.description}>
-      <h1>Conte com <span>a gente</span></h1>
-      <img src={DesignBoard} alt="Costs" />
-      <h3>
-        Conte com a nossa plataforma para fazer os seus projetos, e
-        transforma-los em grandes projetos!!
-      </h3>
+        <h1>
+          Conte com <span>a gente</span>
+        </h1>
+        <img
+          src="https://programathor.com.br/blog/wp-content/uploads/2019/03/adults-analysis-brainstorming-1661004-1-768x421.jpg"
+          alt="Costs"
+        />
+        <h3>
+          Conte com a nossa plataforma para fazer os seus projetos, e
+          transforma-los em grandes projetos!!
+        </h3>
       </section>
     </div>
   )
